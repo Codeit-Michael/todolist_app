@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+
+{% block title %}All Lists{% endblock %}
+
+{% block content %}
+	<h1>My List</h1>
+	<form method="post" action="#">
+		{% csrf_token %}
+			{% for td in user.todolist.all %}
+				<p><a href="/{{td.id}}">{{td}}</a></p>
+			{% endfor %}
+	</form>
+{% endblock %}

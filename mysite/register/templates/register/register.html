@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+	<form method = 'post', class="form-group">
+		{% csrf_token %} 	<!-- must added in making forms -->
+		{{ form|crispy }}	<!-- must pass some forms from views -->
+		<button type="submit" class='btn btn-success'>Sign In</button>
+	</form>
+{% endblock %}
